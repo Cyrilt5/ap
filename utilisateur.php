@@ -1,4 +1,4 @@
 <?php
 require("requete.php");
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+$pdo=connexion();
+salle_dispo($pdo,$_POST['date'],$_POST['heure']);
