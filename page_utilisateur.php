@@ -49,7 +49,7 @@
                                 $timestamp_aujourdhui = strtotime($jour_actuel);
                                 $timestamp_jour = $timestamp_aujourdhui + $i * 24 * 3600;
                                 $date_jour = date("Y-m-d", $timestamp_jour);
-                                echo "<OPTION value=".$i.">" . $date_jour . "</OPTION>";
+                                echo "<OPTION value=".$date_jour.">" . $date_jour . "</OPTION>";
                                 }
 
                                // echo "</table>";
@@ -65,13 +65,22 @@
                             <OPTION>
                             <?php
                             for ($i = 8; $i < 21; $i++) {
-                            echo "<OPTION value=".$i.">"  . date("H", strtotime("$i:00:00")) . "</OPTION>";
+                            echo "<OPTION value=".date("H:i:s", strtotime("$i:00:00")).">"  . date("H:i:s", strtotime("$i:00:00")) . "</OPTION>";
                             }
                             ?>
                             </SELECT>
                     </article>
+<!--*******************************************************fenétre qui s'affiche quand on choisie quelque chose sur les ****************************************************-->
                     <div id="display-element" style="display:none;">
-                        
+                    <article class="col-md-3">
+                        <h4>quelle salle vouler vous reserver ?</h4>
+                            <SELECT name="salle" id="heure" size="1">
+                            <OPTION>
+                            </SELECT>
+
+                        <p id="resultat"></p>
+                        <p id="resultat2"></p>
+                    </article>
                     </div>
                 </div>
                     <div class="row" style="margin-top: 15px">

@@ -74,3 +74,15 @@ function insert_user($pdo,$heures, $date, $idprio, $iduser){
     $stmt->execute(array($idpriorite,$idetat,$numdemande));
     return $stmt;
  }
+
+ function salle_dispo($pdo,$dates,$heures){
+    $stmt=$pdo->prepare("SELECT s.nom_salle 
+                        FROM salle s 
+                        WHERE s.id_salle NOT IN (
+                            SELECT r.id_salle 
+                            FROM resservation r 
+                            WHERE r.dates =? AND r.heure = ?
+                        )");
+    $stmt->execute(arrays($dates,$heures));
+    return $stmt;
+ }
