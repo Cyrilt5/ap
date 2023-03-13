@@ -8,7 +8,8 @@ function connexion(){
     $host = '127.0.0.1';
     $db   = 'ap2';
     $user = 'root';
-    $pass = 'Azerty123$';
+    $pass = 'root';
+    //$pass = 'Azerty123$';
     $dsn = "mysql:host=$host;dbname=$db";
     $options = [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
