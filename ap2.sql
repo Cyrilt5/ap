@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 06 mars 2023 à 11:28
+-- Généré le : ven. 07 avr. 2023 à 14:42
 -- Version du serveur : 8.0.32-0ubuntu0.22.04.2
 -- Version de PHP : 8.1.2-1ubuntu2.11
 
@@ -34,6 +34,16 @@ CREATE TABLE `resservation` (
   `id_salle` int NOT NULL,
   `id_user` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `resservation`
+--
+
+INSERT INTO `resservation` (`id_reservation`, `dates`, `heure`, `id_salle`, `id_user`) VALUES
+(2, '2023-03-08', '08:00:00', 20, 1),
+(3, '2023-03-18', '08:00:00', 20, 1),
+(4, '2023-04-01', '08:00:00', 20, 1),
+(5, '2023-04-01', '08:00:00', 21, 1);
 
 -- --------------------------------------------------------
 
@@ -141,7 +151,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `resservation`
 --
 ALTER TABLE `resservation`
-  MODIFY `id_reservation` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_reservation` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `salle`
